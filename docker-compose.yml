@@ -1,0 +1,9 @@
+services:
+  bunpro-music-bot:
+    build: .
+    container_name: bunpro-music-bot
+    env_file:
+      - .env
+    environment:
+      LAVALINK_NODES: "[]"
+    restart: unless-stopped
