@@ -5,5 +5,16 @@ services:
     env_file:
       - .env
     environment:
-      LAVALINK_NODES: "[]"
+      LAVALINK_NODES: '[{"name":"lavalink","password":"youshallnotpass","host":"lavalink","port":2333,"secure":false}]'
+    restart: unless-stopped
+    depends_on:
+      - lavalink
+
+  lavalink:
+    image: ghcr.io/lavalink-devs/lavalink:latest
+    container_name: lavalink
+    volumes:
+      - ./lavalink.yml:/opt/Lavalink/application.yml:ro
+    ports:
+      - "2333:2333"
     restart: unless-stopped
