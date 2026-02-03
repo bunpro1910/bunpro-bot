@@ -20,7 +20,7 @@ services:
       - "2333:2333"
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "curl -fsS http://localhost:2333/version >/dev/null || exit 1"]
+      test: ["CMD-SHELL", "curl -fsS -H \"Authorization: youshallnotpass\" http://localhost:2333/version >/dev/null || exit 1"]
       interval: 5s
       timeout: 3s
       retries: 12
