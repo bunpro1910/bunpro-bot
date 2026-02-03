@@ -6,17 +6,17 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("help")
-  .setDescription("Get information about the bot and its commands")
+  .setDescription("Xem thông tin bot và các lệnh")
   .addStringOption(option =>
     option.setName("category")
-      .setDescription("Select a category to view")
+      .setDescription("Chọn danh mục để xem")
       .setRequired(false)
       .addChoices(
-        { name: "🏠 Main Menu", value: "main" },
-        { name: "🎵 Music Commands", value: "music" },
-        { name: "📋 Playlist Commands", value: "playlist" },
-        { name: "💜 Basic Commands", value: "basic" },
-        { name: "🔧 Utility Commands", value: "utility" }
+        { name: "🏠 Menu Chính", value: "main" },
+        { name: "🎵 Lệnh Nhạc", value: "music" },
+        { name: "📋 Lệnh Playlist", value: "playlist" },
+        { name: "📌 Lệnh Cơ Bản", value: "basic" },
+        { name: "🔧 Tiện Ích", value: "utility" }
       )
   );
 

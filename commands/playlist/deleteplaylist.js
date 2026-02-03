@@ -5,10 +5,10 @@ const { getLang } = require('../../utils/languageLoader.js');
 
 const data = new SlashCommandBuilder()
   .setName("deleteplaylist")
-  .setDescription("Delete a playlist")
+  .setDescription("Xóa playlist")
   .addStringOption(option =>
     option.setName("name")
-      .setDescription("Enter playlist name")
+      .setDescription("Nhập tên playlist")
       .setRequired(true)
   );
 

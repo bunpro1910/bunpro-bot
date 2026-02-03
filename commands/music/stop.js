@@ -7,7 +7,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("stop")
-  .setDescription("Stop the current song and destroy the player");
+  .setDescription("Dừng bài hiện tại và hủy player");
 
 module.exports = {
     data: data,

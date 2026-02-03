@@ -7,7 +7,7 @@ const { handleCommandError } = require('../../utils/responseHandler.js');
 
 const data = new SlashCommandBuilder()
   .setName("history")
-  .setDescription("Show recently played tracks");
+  .setDescription("Xem các bài đã phát gần đây");
 
 module.exports = {
     data: data,

@@ -6,10 +6,10 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("seek")
-  .setDescription("Seek to a specific time in the current track")
+  .setDescription("Tua đến thời gian cụ thể trong bài")
   .addStringOption(option =>
     option.setName("time")
-      .setDescription("Time to seek to (MM:SS, HH:MM:SS, or seconds)")
+      .setDescription("Thời gian cần tua (MM:SS, HH:MM:SS hoặc giây)")
       .setRequired(true)
   );
 

@@ -6,7 +6,7 @@ const { getLang } = require('../../utils/languageLoader.js');
 
 const data = new SlashCommandBuilder()
   .setName("allplaylists")
-  .setDescription("List all public playlists");
+  .setDescription("Liệt kê các playlist công khai");
 
 module.exports = {
     data: data,

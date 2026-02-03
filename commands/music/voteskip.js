@@ -7,7 +7,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("voteskip")
-  .setDescription("Vote to skip the current track");
+  .setDescription("Bỏ phiếu bỏ qua bài hiện tại");
 
 const voteSkipMap = new Map();
 

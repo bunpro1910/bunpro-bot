@@ -4,7 +4,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("ping")
-  .setDescription("Check the bot latency and response time");
+  .setDescription("Kiểm tra độ trễ và thời gian phản hồi của bot");
 
 function formatUptime(uptime) {
   const seconds = Math.floor((uptime / 1000) % 60);

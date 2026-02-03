@@ -5,7 +5,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("pause")
-  .setDescription("Pause the current song");
+  .setDescription("Tạm dừng bài hiện tại");
 
 module.exports = {
     data: data,

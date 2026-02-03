@@ -5,15 +5,15 @@ const { getLang } = require('../../utils/languageLoader.js');
 
 const data = new SlashCommandBuilder()
   .setName("addsong")
-  .setDescription("Add a song to a playlist")
+  .setDescription("Thêm bài vào playlist")
   .addStringOption(option =>
     option.setName("playlist")
-      .setDescription("Enter playlist name")
+      .setDescription("Nhập tên playlist")
       .setRequired(true)
   )
   .addStringOption(option =>
     option.setName("input")
-      .setDescription("Enter song name or URL")
+      .setDescription("Nhập tên bài hoặc URL")
       .setRequired(true)
   );
 

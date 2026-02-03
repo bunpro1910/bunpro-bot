@@ -7,10 +7,10 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("jump")
-  .setDescription("Jump to a specific track in the queue")
+  .setDescription("Nhảy tới một bài cụ thể trong queue")
   .addIntegerOption(option =>
     option.setName("position")
-      .setDescription("Position of the track in queue (1-based)")
+      .setDescription("Vị trí bài trong queue (bắt đầu từ 1)")
       .setRequired(true)
   );
 

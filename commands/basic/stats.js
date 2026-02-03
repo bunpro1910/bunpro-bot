@@ -5,7 +5,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("stats")
-  .setDescription("Show bot statistics and server information");
+  .setDescription("Xem thống kê bot và thông tin server");
 
 function formatUptime(ms) {
     const seconds = Math.floor(ms / 1000);

@@ -5,15 +5,15 @@ const { getLang } = require('../../utils/languageLoader.js');
 
 const data = new SlashCommandBuilder()
   .setName("createplaylist")
-  .setDescription("Create a new playlist")
+  .setDescription("Tạo playlist mới")
   .addStringOption(option =>
     option.setName("name")
-      .setDescription("Enter playlist name")
+      .setDescription("Nhập tên playlist")
       .setRequired(true)
   )
   .addBooleanOption(option =>
     option.setName("private")
-      .setDescription("Set playlist as private (visible only to you)")
+      .setDescription("Đặt playlist ở chế độ riêng tư (chỉ bạn thấy)")
       .setRequired(true)
   );
 

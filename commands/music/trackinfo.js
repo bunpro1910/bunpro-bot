@@ -6,7 +6,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("trackinfo")
-  .setDescription("Show detailed information about the current track");
+  .setDescription("Xem thông tin chi tiết bài đang phát");
 
 function formatDuration(ms) {
     const seconds = Math.floor((ms / 1000) % 60);

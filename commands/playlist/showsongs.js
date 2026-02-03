@@ -6,10 +6,10 @@ const { getLang } = require('../../utils/languageLoader.js');
 
 const data = new SlashCommandBuilder()
   .setName("showsongs")
-  .setDescription("Show all songs in a playlist")
+  .setDescription("Xem tất cả bài trong playlist")
   .addStringOption(option =>
     option.setName("playlist")
-      .setDescription("Enter playlist name")
+      .setDescription("Nhập tên playlist")
       .setRequired(true)
   );
 

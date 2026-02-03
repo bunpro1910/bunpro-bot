@@ -4,7 +4,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("support")
-  .setDescription("Get support server link and important links");
+  .setDescription("Lấy link hỗ trợ và các liên kết quan trọng");
 
 module.exports = {
     data: data,

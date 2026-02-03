@@ -10,10 +10,10 @@ const requesters = new Map();
 
 const data = new SlashCommandBuilder()
   .setName("play")
-  .setDescription("Play a song from a name or link")
+  .setDescription("Phát nhạc từ tên hoặc liên kết")
   .addStringOption(option =>
     option.setName("name")
-      .setDescription("Enter song name / link or playlist")
+      .setDescription("Nhập tên bài / link hoặc playlist")
       .setRequired(true)
   );
 
@@ -135,6 +135,14 @@ module.exports = {
                         textChannel: interaction.channelId,
                         deaf: true
                     });
+                    if (player && !player.connected) {
+                        player.connect({
+                            guildId: interaction.guildId,
+                            voiceChannel: userVoiceChannel,
+                            textChannel: interaction.channelId,
+                            deaf: true
+                        });
+                    }
                     break;
                 } catch (err) {
                     attempts++;
@@ -154,6 +162,14 @@ module.exports = {
                             textChannel: interaction.channelId,
                             deaf: true
                         });
+                        if (player && !player.connected) {
+                            player.connect({
+                                guildId: interaction.guildId,
+                                voiceChannel: userVoiceChannel,
+                                textChannel: interaction.channelId,
+                                deaf: true
+                            });
+                        }
                         break;
                     }
                     throw err;

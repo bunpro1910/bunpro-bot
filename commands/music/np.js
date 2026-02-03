@@ -6,7 +6,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("np")
-  .setDescription("Displays the currently playing song with a progress bar");
+  .setDescription("Hiển thị bài đang phát kèm thanh tiến trình");
 
 function createProgressBar(current, total, length = 20) {
     const progress = Math.round((current / total) * length);

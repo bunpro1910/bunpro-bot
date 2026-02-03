@@ -6,10 +6,10 @@ const { getLang } = require('../../utils/languageLoader.js');
 
 const data = new SlashCommandBuilder()
   .setName("savequeue")
-  .setDescription("Save the current queue as a playlist")
+  .setDescription("Lưu queue hiện tại thành playlist")
   .addStringOption(option =>
     option.setName("name")
-      .setDescription("Name for the playlist")
+      .setDescription("Tên cho playlist")
       .setRequired(true)
   );
 

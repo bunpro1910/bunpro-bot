@@ -4,21 +4,21 @@ const config = require('../../config');
 
 const data = new SlashCommandBuilder()
   .setName("language")
-  .setDescription("Set the bot's language for this server")
+  .setDescription("Đặt ngôn ngữ cho server này")
   .addStringOption(option =>
     option.setName("lang")
-      .setDescription("Select a language")
+      .setDescription("Chọn ngôn ngữ")
       .setRequired(false)
       .setAutocomplete(true)
   )
   .addStringOption(option =>
     option.setName("action")
-      .setDescription("Action to perform")
+      .setDescription("Hành động cần thực hiện")
       .setRequired(false)
       .addChoices(
-        { name: "View Current", value: "view" },
-        { name: "List Available", value: "list" },
-        { name: "Reset to Default", value: "reset" }
+        { name: "Xem hiện tại", value: "view" },
+        { name: "Danh sách ngôn ngữ", value: "list" },
+        { name: "Đặt về mặc định", value: "reset" }
       )
   );
 
@@ -99,7 +99,7 @@ module.exports = {
           .addTextDisplayComponents(
             (textDisplay) => textDisplay.setContent(
               `## 📚 Available Languages\n\n` +
-              `Select a language from the list below:\n\n` +
+              `Chọn ngôn ngữ from the list below:\n\n` +
               `**Available Languages:**\n${langList}`
             )
           );

@@ -6,15 +6,15 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("move")
-  .setDescription("Move a track to a different position in the queue")
+  .setDescription("Di chuyển bài tới vị trí khác trong queue")
   .addIntegerOption(option =>
     option.setName("from")
-      .setDescription("Current position of the track (1-based)")
+      .setDescription("Vị trí hiện tại của bài (bắt đầu từ 1)")
       .setRequired(true)
   )
   .addIntegerOption(option =>
     option.setName("to")
-      .setDescription("New position for the track (1-based)")
+      .setDescription("Vị trí mới cho bài (bắt đầu từ 1)")
       .setRequired(true)
   );
 

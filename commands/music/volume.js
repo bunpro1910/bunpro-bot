@@ -5,10 +5,10 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("volume")
-  .setDescription("Set the volume of the current song")
+  .setDescription("Đặt âm lượng cho bài hiện tại")
   .addIntegerOption(option =>
     option.setName("level")
-      .setDescription("Volume level (0-100)")
+      .setDescription("Mức âm lượng (0-100)")
       .setRequired(true)
       .setMinValue(0)
       .setMaxValue(100)

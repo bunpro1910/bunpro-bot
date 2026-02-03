@@ -69,7 +69,7 @@ initializePlayer(client).catch(error => {
     console.error(`${colors.cyan}[ LAVALINK ]${colors.reset} ${colors.red}${lang.console?.bot?.lavalinkError?.replace('{message}', error.message) || `Error initializing player: ${error.message}`}${colors.reset}`);
 });
 
-client.on("clientReady", () => {
+client.once("ready", () => {
     const lang = getLangSync();
     console.log(`${colors.cyan}[ SYSTEM ]${colors.reset} ${colors.green}${lang.console?.bot?.clientLogged?.replace('{tag}', client.user.tag) || `Client logged as ${client.user.tag}`}${colors.reset}`);
     console.log(`${colors.cyan}[ MUSIC ]${colors.reset} ${colors.green}${lang.console?.bot?.musicSystemReady || 'Riffy Music System Ready 🎵'}${colors.reset}`);
@@ -162,8 +162,7 @@ loadCommands();
 
 
 client.on("raw", (d) => {
-    const { GatewayDispatchEvents } = require("discord.js");
-    if (![GatewayDispatchEvents.VoiceStateUpdate, GatewayDispatchEvents.VoiceServerUpdate].includes(d.t)) return;
+    if (d.t !== "VOICE_STATE_UPDATE" && d.t !== "VOICE_SERVER_UPDATE") return;
     client.riffy.updateVoiceState(d);
 });
 

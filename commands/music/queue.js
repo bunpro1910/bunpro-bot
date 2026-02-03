@@ -6,7 +6,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("queue")
-  .setDescription("Show the current song queue");
+  .setDescription("Xem hàng chờ hiện tại");
 
 module.exports = {
     data: data,

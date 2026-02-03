@@ -6,10 +6,10 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("remove")
-  .setDescription("Remove a song from the queue by its position")
+  .setDescription("Xóa bài khỏi queue theo vị trí")
   .addIntegerOption(option =>
     option.setName("position")
-      .setDescription("Position of the song to remove from the queue")
+      .setDescription("Vị trí bài cần xóa trong queue")
       .setRequired(true)
   );
 

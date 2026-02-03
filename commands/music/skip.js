@@ -6,7 +6,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("skip")
-  .setDescription("Skip the current song");
+  .setDescription("Bỏ qua bài hiện tại");
 
 module.exports = {
     data: data,

@@ -9,10 +9,10 @@ const { getLang } = require('../../utils/languageLoader.js');
 
 const data = new SlashCommandBuilder()
   .setName("playcustomplaylist")
-  .setDescription("Play a custom playlist")
+  .setDescription("Phát playlist tùy chỉnh")
   .addStringOption(option =>
     option.setName("name")
-      .setDescription("Enter playlist name")
+      .setDescription("Nhập tên playlist")
       .setRequired(true)
   );
 
@@ -129,6 +129,14 @@ module.exports = {
                         textChannel: interaction.channelId,
                         deaf: true
                     });
+                    if (player && !player.connected) {
+                        player.connect({
+                            guildId: interaction.guildId,
+                            voiceChannel: userVoiceChannel,
+                            textChannel: interaction.channelId,
+                            deaf: true
+                        });
+                    }
                     break;
                 } catch (err) {
                     attempts++;
@@ -148,6 +156,14 @@ module.exports = {
                             textChannel: interaction.channelId,
                             deaf: true
                         });
+                        if (player && !player.connected) {
+                            player.connect({
+                                guildId: interaction.guildId,
+                                voiceChannel: userVoiceChannel,
+                                textChannel: interaction.channelId,
+                                deaf: true
+                            });
+                        }
                         break;
                     }
                     throw err;

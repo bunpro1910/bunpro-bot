@@ -6,7 +6,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("shuffle")
-  .setDescription("Shuffle the current song queue");
+  .setDescription("Xáo trộn hàng chờ hiện tại");
 
 module.exports = {
     data: data,

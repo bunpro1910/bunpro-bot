@@ -6,7 +6,7 @@ const { getLang } = require('../../utils/languageLoader.js');
 
 const data = new SlashCommandBuilder()
   .setName("myplaylists")
-  .setDescription("List all playlists you have created");
+  .setDescription("Liệt kê các playlist bạn đã tạo");
 
 module.exports = {
     data: data,

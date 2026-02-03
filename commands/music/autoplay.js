@@ -5,10 +5,10 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("autoplay")
-  .setDescription("Toggle autoplay for the server")
+  .setDescription("Bật/tắt autoplay cho server")
   .addBooleanOption(option =>
     option.setName("enable")
-      .setDescription("Toggle autoplay on / off")
+      .setDescription("Bật hoặc tắt autoplay")
       .setRequired(true)
   );
 

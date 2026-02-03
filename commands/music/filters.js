@@ -5,10 +5,10 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("filters")
-  .setDescription("Control audio filters")
+  .setDescription("Điều chỉnh bộ lọc âm thanh")
   .addStringOption(option =>
     option.setName("filter")
-      .setDescription("Select a filter to apply")
+      .setDescription("Chọn bộ lọc để áp dụng")
       .setRequired(true)
       .addChoices(
         { name: 'Karaoke', value: 'karaoke' },

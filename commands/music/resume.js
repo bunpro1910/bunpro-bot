@@ -5,7 +5,7 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("resume")
-  .setDescription("Resume the current song");
+  .setDescription("Tiếp tục phát bài hiện tại");
 
 module.exports = {
     data: data,

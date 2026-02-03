@@ -8,10 +8,10 @@ const { getLang } = require('../../utils/languageLoader');
 
 const data = new SlashCommandBuilder()
   .setName("search")
-  .setDescription("Search for a song and select from results")
+  .setDescription("Tìm bài và chọn từ kết quả")
   .addStringOption(option =>
     option.setName("query")
-      .setDescription("Search query for the song")
+      .setDescription("Từ khóa tìm kiếm bài")
       .setRequired(true)
   );
 
@@ -112,6 +112,14 @@ module.exports = {
                         textChannel: interaction.channelId,
                         deaf: true
                     });
+                    if (player && !player.connected) {
+                        player.connect({
+                            guildId: interaction.guildId,
+                            voiceChannel: userVoiceChannel,
+                            textChannel: interaction.channelId,
+                            deaf: true
+                        });
+                    }
                     break;
                 } catch (err) {
                     attempts++;
@@ -131,6 +139,14 @@ module.exports = {
                             textChannel: interaction.channelId,
                             deaf: true
                         });
+                        if (player && !player.connected) {
+                            player.connect({
+                                guildId: interaction.guildId,
+                                voiceChannel: userVoiceChannel,
+                                textChannel: interaction.channelId,
+                                deaf: true
+                            });
+                        }
                         break;
                     }
                     throw err;

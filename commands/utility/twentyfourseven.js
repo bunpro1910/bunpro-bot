@@ -7,10 +7,10 @@ const { handleCommandError } = require('../../utils/responseHandler.js');
 
 const data = new SlashCommandBuilder()
   .setName("247")
-  .setDescription("Toggle 24/7 mode (keep bot in voice channel)")
+  .setDescription("Bật/tắt chế độ 24/7 (giữ bot trong kênh voice)")
   .addBooleanOption(option =>
     option.setName("enable")
-      .setDescription("Enable or disable 24/7 mode")
+      .setDescription("Bật hoặc tắt chế độ 24/7")
       .setRequired(true)
   );
 
