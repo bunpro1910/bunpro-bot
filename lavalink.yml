@@ -5,9 +5,6 @@ server:
     enabled: false
 
 lavalink:
-  plugins:
-    - dependency: "dev.lavalink.youtube:youtube-plugin:1.17.0"
-      snapshot: false
   pluginsDir: "./plugins"
   server:
     password: "youshallnotpass"
@@ -24,3 +21,11 @@ lavalink:
 plugins:
   youtube:
     enabled: true
+    allowSearch: true
+    allowDirectVideoIds: true
+    allowDirectPlaylistIds: true
+    clients:
+      - MUSIC
+      - ANDROID_VR
+      - WEB
+      - WEBEMBEDDED
