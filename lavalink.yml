@@ -5,6 +5,9 @@ server:
     enabled: false
 
 lavalink:
+  plugins:
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.17.0"
+      snapshot: false
   pluginsDir: "./plugins"
   server:
     password: "youshallnotpass"
