@@ -25,11 +25,15 @@ process.on('unhandledRejection', (error) => {
         error.message.includes('track.info') ||
         error.message.includes('thumbnail') ||
         error.message.includes('player.restart is not a function') ||
-        error.message.includes('restart is not a function')
+        error.message.includes('restart is not a function') ||
+        error.message.includes('Player connection is not initiated')
     )) {
    
         if (error.message.includes('player.restart') || error.message.includes('restart is not a function')) {
             console.warn(`${colors.cyan}[ LAVALINK ]${colors.reset} ${colors.yellow}Ignoring Riffy reconnect bug: ${error.message}${colors.reset}`);
+        }
+        if (error.message.includes('Player connection is not initiated')) {
+            console.warn(`${colors.cyan}[ LAVALINK ]${colors.reset} ${colors.yellow}Player not connected yet - ignoring trackEnd play attempt${colors.reset}`);
         }
         return;
     }

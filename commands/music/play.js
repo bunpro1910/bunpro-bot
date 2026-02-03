@@ -277,6 +277,33 @@ module.exports = {
                 connectionAttempts++;
             }
 
+            if (!player.connected) {
+                try {
+                    player.connect({
+                        guildId: interaction.guildId,
+                        voiceChannel: userVoiceChannel,
+                        textChannel: interaction.channelId,
+                        deaf: true
+                    });
+                } catch (e) {}
+
+                connectionAttempts = 0;
+                while (!player.connected && connectionAttempts < 30) {
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                    connectionAttempts++;
+                }
+            }
+
+            if (!player.connected) {
+                return sendErrorResponse(
+                    interaction,
+                    (t.voiceConnectError?.title || '## ⚠️ Voice connection failed') + '\n\n' +
+                    (t.voiceConnectError?.message || 'Bot could not establish a voice connection. Please check voice permissions or server UDP availability.') + '\n' +
+                    (t.voiceConnectError?.note || 'Try rejoining the voice channel and run /play again.'),
+                    5000
+                );
+            }
+
             if (!player.playing && !player.paused) player.play();
 
             const embedColor = parseInt(config.embedColor?.replace('#', '') || '1db954', 16);
