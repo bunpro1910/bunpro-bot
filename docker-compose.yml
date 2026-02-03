@@ -8,7 +8,8 @@ services:
       LAVALINK_NODES: '[{"name":"lavalink","password":"youshallnotpass","host":"lavalink","port":2333,"secure":false}]'
     restart: unless-stopped
     depends_on:
-      - lavalink
+      lavalink:
+        condition: service_healthy
 
   lavalink:
     image: ghcr.io/lavalink-devs/lavalink:latest
@@ -18,3 +19,9 @@ services:
     ports:
       - "2333:2333"
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:2333/version >/dev/null || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 10s
